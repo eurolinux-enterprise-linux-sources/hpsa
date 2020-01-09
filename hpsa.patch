@@ -1,0 +1,12 @@
+diff --git a/drivers/scsi/hpsa.h b/drivers/scsi/hpsa.h
+index 7a4b1e0..e88359f 100644
+--- a/drivers/scsi/hpsa.h
++++ b/drivers/scsi/hpsa.h
+@@ -25,6 +25,7 @@
+ 
+ #define IO_OK		0
+ #define IO_ERROR	1
++#define PCI_DEVICE_ID_HP_CISSI          0x3239
+ 
+ struct ctlr_info;
+ 
