@@ -1,13 +1,13 @@
 %define kmod_name		hpsa
-%define kmod_driver_version	3.4.4_1_RH1
+%define kmod_driver_version	3.4.4_1_RH4
 %define kmod_rpm_release	1
-%define kmod_git_hash		e6f91e8be1844f8ed221bc6ec07ee15ff8b2de39
+%define kmod_git_hash		7c108cd1d6a3ddd6db253f6dd100dee7b7c01a64
 %define kmod_kernel_version	2.6.32-431.el6
 %define kernel_version		2.6.32-431.el6
 %define kmod_kbuild_dir		drivers/scsi/
 
 
-%{!?dist: %define dist .el6}
+%{!?dist: %define dist .el6_6}
 
 Source0:	%{kmod_name}-%{kmod_driver_version}.tar.bz2			
 Source1:	%{kmod_name}.files			
@@ -30,7 +30,7 @@ Group:		System/Kernel
 License:	GPLv2
 URL:		http://www.kernel.org/
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-BuildRequires:	%kernel_module_package_buildreqs
+BuildRequires:	%kernel_module_package_buildreqs kernel-devel = %kmod_kernel_version
 ExclusiveArch:  i686 x86_64
 
 
@@ -101,5 +101,7 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Wed Jul 02 2014 Weiping Pan <wpan@redhat.com> 3.4.4_1_RH1 1
+* Tue Mar 31 2015 Petr Oros <poros@redhat.com> 3.4.4_1_RH4 1
 - hpsa DUP module
+- Resolves: #1192651
+
