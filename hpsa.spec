@@ -1,9 +1,9 @@
 %define kmod_name		hpsa
-%define kmod_driver_version	3.4.0_1_RH1
+%define kmod_driver_version	3.4.4_1_RH1
 %define kmod_rpm_release	1
-%define kmod_git_hash		52d62b150ae2b75f3adef66579a3af7cd0413f3e
-%define kmod_kernel_version	2.6.32-358.el6
-%define kernel_version		2.6.32-358.el6
+%define kmod_git_hash		e6f91e8be1844f8ed221bc6ec07ee15ff8b2de39
+%define kmod_kernel_version	2.6.32-431.el6
+%define kernel_version		2.6.32-431.el6
 %define kmod_kbuild_dir		drivers/scsi/
 
 
@@ -15,8 +15,6 @@ Source2:	depmodconf
 Source3:	find-requires.ksyms			
 Source4:	find-provides.ksyms			
 Source5:	kmodtool			
-Source6:	symbols.greylist-i686			
-Source7:	symbols.greylist-x86_64			
 
 Patch0:		hpsa.patch
 
@@ -49,8 +47,6 @@ ExclusiveArch:  i686 x86_64
 set -- *
 mkdir source
 mv "$@" source/
-cp %{SOURCE6} source/
-cp %{SOURCE7} source/
 mkdir obj
 
 %build
@@ -105,5 +101,5 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
-* Mon Oct 21 2013 Weiping Pan <wpan@redhat.com> 3.4.0_1_RH1 1
+* Wed Jul 02 2014 Weiping Pan <wpan@redhat.com> 3.4.4_1_RH1 1
 - hpsa DUP module

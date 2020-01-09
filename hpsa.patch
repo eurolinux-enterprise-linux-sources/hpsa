@@ -1,12 +1,13 @@
 diff --git a/drivers/scsi/hpsa.h b/drivers/scsi/hpsa.h
-index 7a4b1e0..e88359f 100644
+index 4cffd44..3122570 100644
 --- a/drivers/scsi/hpsa.h
 +++ b/drivers/scsi/hpsa.h
-@@ -25,6 +25,7 @@
- 
+@@ -26,6 +26,8 @@
  #define IO_OK		0
  #define IO_ERROR	1
-+#define PCI_DEVICE_ID_HP_CISSI          0x3239
  
++#define PCI_VENDOR_ID_HP_3PAR          0x1590
++
  struct ctlr_info;
  
+ struct access_method {
