@@ -1,0 +1,13 @@
+diff --git a/drivers/scsi/hpsa.c b/drivers/scsi/hpsa.c
+index 8d044e2..875406d 100644
+--- a/drivers/scsi/hpsa.c
++++ b/drivers/scsi/hpsa.c
+@@ -53,6 +53,8 @@
+ #include "hpsa_cmd.h"
+ #include "hpsa.h"
+ 
++#define PCI_VENDOR_ID_HP_3PAR           0x1590
++
+ /* HPSA_DRIVER_VERSION must be 3 byte values (0-255) separated by '.' */
+ #define HPSA_DRIVER_VERSION "3.4.4-1-RH1"
+ #define DRIVER_NAME "HP HPSA Driver (v " HPSA_DRIVER_VERSION ")"
